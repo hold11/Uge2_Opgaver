@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Uge2_Opgaver:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Uge2_Opgaver_jar</output-path>
+    <root id="archive" name="Uge2_Opgaver.jar">
+      <element id="module-output" name="Uge2_Opgaver" />
+    </root>
+  </artifact>
+</component>

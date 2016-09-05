@@ -8,6 +8,7 @@ public class App {
     public static void main(String[] args) {
         //indlæs variable
         double d = 0.0, g = 9.82, t;
+        double v = 0.0;
 
         boolean success = false;
 
@@ -34,9 +35,11 @@ public class App {
             }
             if (success) {
                 t = Math.sqrt((2 * d) / g);
+                v = g * t;
                 //t = t * 1000;
                 //t = Math.round(t) / 1000;
                 System.out.println("Faldet tager " + t + " sekunder.");
+                System.out.println("Sluthastigheden er " + v + " m/s.");
             }
         }
     }
