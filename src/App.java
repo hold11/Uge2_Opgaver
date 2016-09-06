@@ -1,5 +1,5 @@
 /**
- * Created by tjc on 5/9/16.
+ *  * Created by tjc on 5/9/16.
  */
 //indlæs klasse Scanner
 import java.util.Scanner;
@@ -12,35 +12,30 @@ public class App {
 
         boolean success = false;
 
-        Scanner input = new Scanner(System.in);
+        while (!success) {
+            System.out.println("Skriv en højde [m] som objektet falder fra:");
+            Scanner input = new Scanner(System.in);
 
-        System.out.println("Skriv en højde [m] som objektet falder fra:");
-        try
-        {
-            d = input.nextDouble();
-            success = true;
-            input.close();
+            try {
+                d = input.nextDouble();
+                success = true;
+            } catch (Exception ex) {
+                System.out.println("Indtast venligst et tal.");
+            }
         }
 
-        catch(Exception ex)
-        {
-            System.out.println("Indtast venligst et tal.");
-            input.close();
+
+        if (d < 0) {
+            System.out.println(" Højden skal være ≥ 0");
+            success = false;
         }
-        finally
-        {
-            if (d < 0) {
-                System.out.println(" Højden skal være ≥ 0");
-                success = false;
-            }
-            if (success) {
-                t = Math.sqrt((2 * d) / g);
-                v = g * t;
-                //t = t * 1000;
-                //t = Math.round(t) / 1000;
-                System.out.println("Faldet tager " + t + " sekunder.");
-                System.out.println("Sluthastigheden er " + v + " m/s.");
-            }
+        if (success) {
+            t = Math.sqrt((2 * d) / g);
+            v = g * t;
+            //t = t * 1000;
+            //t = Math.round(t) / 1000;
+            System.out.println("Faldet tager " + t + " sekunder.");
+            System.out.println("Sluthastigheden er " + v + " m/s.");
         }
     }
 }
