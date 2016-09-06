@@ -18,24 +18,21 @@ public class App {
 
             try {
                 d = input.nextDouble();
-                success = true;
+                if (d < 0) {
+                    System.out.println("Højden skal være ≥ 0.");
+                } else {
+                    success = true;
+                }
             } catch (Exception ex) {
                 System.out.println("Indtast venligst et tal.");
             }
         }
 
-
-        if (d < 0) {
-            System.out.println(" Højden skal være ≥ 0");
-            success = false;
-        }
-        if (success) {
-            t = Math.sqrt((2 * d) / g);
-            v = g * t;
-            //t = t * 1000;
-            //t = Math.round(t) / 1000;
-            System.out.println("Faldet tager " + t + " sekunder.");
-            System.out.println("Sluthastigheden er " + v + " m/s.");
-        }
+        t = Math.sqrt((2 * d) / g);
+        v = g * t;
+        //t = t * 1000;
+        //t = Math.round(t) / 1000;
+        System.out.println("Faldet tager " + t + " sekunder.");
+        System.out.println("Sluthastigheden er " + v + " m/s.");
     }
 }
