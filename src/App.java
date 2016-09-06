@@ -11,10 +11,10 @@ public class App {
         double v = 0.0;
 
         boolean success = false;
+        Scanner input = new Scanner(System.in);
 
         while (!success) {
             System.out.println("Skriv en højde [m] som objektet falder fra:");
-            Scanner input = new Scanner(System.in);
 
             try {
                 d = input.nextDouble();
@@ -25,6 +25,7 @@ public class App {
                 }
             } catch (Exception ex) {
                 System.out.println("Indtast venligst et tal.");
+                input.next();
             }
         }
 
